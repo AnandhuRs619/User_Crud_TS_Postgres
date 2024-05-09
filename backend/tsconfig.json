@@ -10,6 +10,7 @@
       "outDir": "./build",
       "emitDecoratorMetadata": true,
       "experimentalDecorators": true,
-      "sourceMap": true
+      "sourceMap": true,
+      "types": ["express"]  // Add this line
    }
 }
