@@ -1,5 +1,6 @@
 import * as express from "express";
 import * as bodyParser from "body-parser";
+import * as morgan from "morgan";
 import { Request, Response, NextFunction } from 'express';
 import { AppDataSource } from "./data-source";
 import { Routes } from "./routes";
@@ -14,6 +15,7 @@ AppDataSource.initialize().then(async () => {
     try {
         // create express app
         const app = express();
+        app.use(morgan("tiny"))
         app.use(bodyParser.json());
 
         // register express routes from defined application routes
