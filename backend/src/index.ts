@@ -4,6 +4,7 @@ import { Request, Response, NextFunction } from 'express';
 import { AppDataSource } from "./data-source";
 import { Routes } from "./routes";
 import { User } from "./entity/User";
+import { port } from "./config";
 
 function handleError(err, _req, res, _next) {
     res.status(err.statusCode || 500).send({message:err.message});
@@ -31,8 +32,8 @@ AppDataSource.initialize().then(async () => {
         app.use(handleError);
 
         // start express server
-        app.listen(3000, () => {
-            console.log("Express server has started on port 3000. Open http://localhost:3000/users to see results");
+        app.listen(port, () => {
+            console.log(`Express server has started on port${port} . Open http://localhost:${port}/users to see results`);
         });
     } catch (error) {
         console.error("An error occurred during initialization:", error);
