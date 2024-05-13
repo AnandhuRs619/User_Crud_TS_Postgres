@@ -11,6 +11,6 @@
       "emitDecoratorMetadata": true,
       "experimentalDecorators": true,
       "sourceMap": true,
-      "types": ["express"]  // Add this line
+      "types": ["express","node" ,"jest","typeorm"]  // Add this line
    }
 }
